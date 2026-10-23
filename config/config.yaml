@@ -177,31 +177,24 @@ ai_filter:
 # 统一管理推送消息中显示哪些区域及其排列顺序
 # ===============================================================
 display:
-  # 区域显示顺序（从上到下 = 推送中从上到下）
-  # 调整顺序：剪切粘贴整行即可
-  # 要显示某个区域，需同时：1. 在此列表中  2. 下方 regions 对应开关为 true
   region_order:
-    - new_items                           # 1️⃣ 新增热点区域
-    - hotlist                             # 2️⃣ 热榜区域（关键词匹配 / AI 智能筛选）
-    - rss                                 # 3️⃣ RSS 订阅区域
-    - standalone                          # 4️⃣ 独立展示区
-    - ai_analysis                         # 5️⃣ AI 分析区域
+    - new_items
+    - hotlist
+    - rss
+    - standalone
+    - ai_analysis
 
-  # 推送区域开关（需配合上方 region_order 使用）
-    regions:
+  regions:
     hotlist: false
     new_items: false
     rss: true
     standalone: false
     ai_analysis: false
 
-  # 独立展示区：将指定平台/RSS 完整展示，不受关键词过滤
-  # 推送展示由 regions.standalone 控制，AI 分析由 ai_analysis.include_standalone 控制
   standalone:
-    platforms: ["zhihu", "wallstreetcn-hot"]     # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
-    rss_feeds: []                                # RSS 源 ID 列表（如 ["hacker-news"]）
-    max_items: 20                                # 每个源最多展示条数（0=不限制）
-
+    platforms: []
+    rss_feeds: []
+    max_items: 20
 
 # ===============================================================
 # 6. 推送通知
